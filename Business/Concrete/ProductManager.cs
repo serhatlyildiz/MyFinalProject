@@ -22,7 +22,7 @@ namespace Business.Concrete
         {
             //İş kodları
             //Yetkisi var mı?
-
+    
             return _IProductDal.GetAll();
         }
     }
