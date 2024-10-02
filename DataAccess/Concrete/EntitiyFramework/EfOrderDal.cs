@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Concrete.EntitiyFramework
+namespace DataAccess.Concrete.EntityFramework
 {
     public class EfOrderDal:EfEntityRepositoryBase<Order, NorthwindContext>, IOrderDal
     {
