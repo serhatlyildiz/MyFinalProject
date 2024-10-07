@@ -1,4 +1,6 @@
 ﻿using Autofac.Core;
+using Core.CrossCuttingConcerns.Caching;
+using Core.CrossCuttingConcerns.Caching.Microsoft;
 using Core.Utilities.IoC;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,7 +14,10 @@ namespace Core.DependencyRevolvers
     {
         public void Load(IServiceCollection serviceCollection)
         {
+            //redise geçersem alttaki ilk kodu sil RedisCacheManager yapmam yeterli
+            serviceCollection.AddMemoryCache();
             serviceCollection.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            serviceCollection.AddSingleton<ICacheManager, MemoryCacheManager>();
         }
     }
 }
